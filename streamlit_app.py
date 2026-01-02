@@ -55,8 +55,9 @@ if ingredients_list:
     
     for fruit_chosen in ingredients_list: 
         ingredients_string += fruit_chosen + ' ' #+= operator means "add this to what is already in the variable"
+        st.subheader(fruit_chosen + 'Nutritional Information') #
         #added from line 80
-        smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/watermelon")
+        smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/watermelon" + fruit_chosen) #
         sf_df = st.dataframe(data=smoothiefroot_response.json(),use_container_width=True)
         
         
